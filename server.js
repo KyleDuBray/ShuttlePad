@@ -11,15 +11,6 @@ app.use(cors());
 
 const { PORT, WEATHER_KEY, UNSPLASH_KEY, UNSPLASH_SECRET } = config;
 
-// Serve static assets if in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
-
 let currentPicture = {};
 
 const job = schedule.scheduleJob("*/10 * * * *", async () => {
@@ -52,6 +43,15 @@ app.get("/api/weather/:latitude/:longitude", async (req, res) => {
 app.get("/api/unsplash", async (req, res) => {
   return res.status(201).send(currentPicture);
 });
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
