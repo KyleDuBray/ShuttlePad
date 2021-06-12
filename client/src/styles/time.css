@@ -1,0 +1,8 @@
+.time-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 2px;
+  margin: auto;
+}

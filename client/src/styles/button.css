@@ -1,0 +1,154 @@
+/**************************
+NORMALIZE
+*************************** */
+
+button {
+  font-family: inherit; /* For all browsers */
+  font-size: 100%; /* For all browsers */
+  line-height: 1.15; /* For all browsers */
+  margin: 0; /* Firefox and Safari have margin */
+  overflow: visible; /* Edge hides overflow */
+  text-transform: none; /* Firefox inherits text-transform */
+  -webkit-appearance: button; /* Safari otherwise prevents some styles */
+}
+
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**************************
+Focus styles via keyboard using 
+*************************** */
+
+/* Fixing the Safari bug for `<button>`s overflow */
+.fix-focus {
+  position: relative;
+}
+
+/* Removing the focus ring styles specifically for button in Firefox */
+button:not(:-moz-focusring):focus > .fix-focus {
+  box-shadow: none;
+}
+
+/* Removing default outline only after we've added our custom one */
+.fix-focus:focus {
+  outline: none;
+}
+
+/**************************
+Add Link Button
+*************************** */
+.addlink {
+  margin: 5px 10px;
+}
+
+/*The span MUST have inline-block to set width correctly
+in it's context (currently inherited)*/
+.addlink,
+.add-span {
+  border: 0;
+  border-radius: 0.25rem;
+  background: #80ff937b;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 26.4px;
+  width: 80px;
+}
+
+.addlink .add-span {
+  padding: 2px;
+}
+
+.addlink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 10px rgb(71, 71, 71);
+}
+
+.addlink:active {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transform: translateY(1px);
+}
+
+.addlink .add-span:focus {
+  text-decoration: none;
+}
+
+:focus > .add-span {
+  box-shadow: 0 0 3px 7px lime;
+  outline: none;
+}
+
+.addlink:focus {
+  outline: none;
+}
+
+/**************************
+Delete Link Button
+*************************** */
+
+.deletelink,
+.delete-span {
+  border: 0;
+  border-radius: 0.25rem;
+  background: none;
+  cursor: pointer;
+  height: 20px;
+}
+
+.deletelink {
+  margin: 0;
+}
+
+/**************************
+Toggle DeleteLink Button
+*************************** */
+
+.toggledelete,
+.toggledelete-span {
+  border: 0;
+  border-radius: 0.25rem;
+  background: none;
+  cursor: pointer;
+  height: 20px;
+}
+
+/**************************
+Form Buttons
+*************************** */
+.form-addlink-add-btn,
+.form-addlink-add-span {
+  border: 0;
+  border-radius: 0.25rem;
+  background: #80ff937b;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 26.4px;
+  width: 80px;
+  margin-right: 2px;
+}
+
+.form-addlink-cancel-btn,
+.form-addlink-cancel-span {
+  border: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 26.4px;
+  width: 80px;
+}
+
+@media only screen and (max-width: 620px) {
+  .form-addlink-cancel-btn,
+  .form-addlink-cancel-span,
+  .form-addlink-add-btn,
+  .form-addlink-add-span {
+    width: 100%;
+  }
+}

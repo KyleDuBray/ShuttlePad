@@ -1,0 +1,23 @@
+.weather-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 2px;
+  margin: auto;
+}
+
+.weather-city {
+  padding-right: 1rem;
+}
+
+.weather-reporter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+ion-icon {
+  font-size: 2rem;
+  color: black;
+}

@@ -1,0 +1,81 @@
+.form-addlink {
+  height: max-content;
+  width: 33vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 0 4vw 0 0;
+}
+
+.form-addlink--content {
+  padding: 5% 0 0 5%;
+}
+
+.form-addlink--head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-addlink--head h1 {
+  font-weight: 300;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.85);
+  display: block;
+}
+
+.form-addlink--fields label {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.field {
+  margin: 10px 0 10px 0;
+}
+
+.field label,
+.field input {
+  display: block;
+}
+
+input[type='text'] {
+  padding: 2px 5px;
+  width: 90%;
+  outline: none;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 2px;
+  transition: 0.2s;
+  background: transparent;
+}
+
+input[type='text']:focus {
+  border-bottom: 2px solid rgba(0, 4, 255, 0.411);
+  border-radius: 2px;
+  box-shadow: 0 0 1px -1px rgba(0, 4, 255, 0.829);
+}
+
+.form-addlink--content > * {
+  margin-bottom: 10px;
+}
+
+/****** SEE button.css FILE FOR FORM BUTTON STYLING *********/
+
+/*********************************************
+MEDIA QUERIES
+**********************************************/
+
+@media only screen and (max-width: 990px) {
+  .form-addlink {
+    width: 330px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .field input {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .form-addlink {
+    width: 100vw;
+  }
+}

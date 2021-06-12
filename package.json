@@ -1,0 +1,22 @@
+{
+  "name": "shuttlepad",
+  "version": "1.0.0",
+  "description": "A homepage app.",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon --ignore ./client server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Kyle DuBray",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "node-schedule": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
