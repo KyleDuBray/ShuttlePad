@@ -14,7 +14,7 @@ import {
   FETCH_WEATHER,
 } from "./types";
 
-import weather from "../apis/weather";
+import axios from "axios";
 
 export const createLink = (formValues) => {
   const { url, siteName } = formValues;
@@ -77,7 +77,7 @@ export const fetchWeather = () => async (dispatch, getState) => {
   let response = {};
   if (latitude) {
     try {
-      response = await weather.get(`/api/weather/${latitude}/${longitude}`);
+      response = await axios.get(`/api/weather/${latitude}/${longitude}`);
     } catch (err) {
       console.error(err);
       response.data = {};

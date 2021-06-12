@@ -2,7 +2,7 @@ import "./styles/base.css";
 import "./styles/landing.css";
 import "./styles/widgets.css";
 import React, { useState, useEffect, useCallback } from "react";
-import unsplash from "./apis/unsplash";
+import axios from "axios";
 
 import { ReactComponent as Logo } from "./icons/logo.svg";
 import Weather from "./components/Weather";
@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     const getImg = async () => {
       try {
-        const response = await unsplash.get("/api/unsplash");
+        const response = await axios.get("/api/unsplash");
         setFetchedImg(response.data.urls.regular);
         setFetchedData(response.data);
         console.log(response.data);
