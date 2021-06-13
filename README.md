@@ -16,5 +16,3 @@ PORT *(for development)*
 
 The heroku-postbuild script is used automatically by [Heroku](https://.heroku.com/) when deployed.
 
-## NPM packages
-
