@@ -3,10 +3,13 @@ An application to serve as a home page that includes quick links and a local wea
 
 ## Configuration and APIs
 
-Before running this application, the following environment variables are needed:
-UNSPLASH_KEY *Obtain from [Unsplash for Developers](https://unsplash.com/developers) to access their API for photo retrieval.*
-WEATHER_KEY *Obtain from [Open Weather Map](https://openweathermap.org/api) to access their API for location-based weather retrieval.*
-PORT *(for development)*
+Before running this application, the following environment variables are needed:  
+
+UNSPLASH_KEY *Obtain from [Unsplash for Developers](https://unsplash.com/developers) to access their API for photo retrieval.*  
+
+WEATHER_KEY *Obtain from [Open Weather Map](https://openweathermap.org/api) to access their API for location-based weather retrieval.*  
+
+PORT *(for development)*  
 
 
 ## Available Scripts
