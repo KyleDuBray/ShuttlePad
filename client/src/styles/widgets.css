@@ -90,6 +90,8 @@ Footer & Acknowledgements
   font-weight: 300;
   margin: auto;
   color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.233);
+  border-radius: 2px;
 }
 
 .ack-container a,
@@ -109,6 +111,8 @@ Footer & Acknowledgements
   color: rgb(156, 156, 156);
   font-size: 1.5rem;
   margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.253);
+  background-color: none;
 }
 
 /**************************
