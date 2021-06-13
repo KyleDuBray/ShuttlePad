@@ -14,8 +14,9 @@ PORT *(for development)*
 
 ## Available Scripts
 
-`npm run server` in the root directory will start the express server.
-`npm start` in the client directory will start the react application. If changes are made only in the client directory, the server will not restart on save.
+`npm run server` in the root directory will start the express server.  
+
+`npm start` in the client directory will start the react application. If changes are made only in the client directory, the server will not restart on save.  
 
 The heroku-postbuild script is used automatically by [Heroku](https://.heroku.com/) when deployed.
 
