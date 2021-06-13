@@ -2,7 +2,7 @@
   /* background-color: rgba(189, 189, 189, 0.082); */
   width: 75vw;
   height: auto;
-  margin: 0 auto auto auto;
+  margin: 0 auto 0 auto;
   /*
   box-shadow: 0px 5px 10px rgb(20, 20, 20);
   backdrop-filter: blur(10px);
@@ -22,7 +22,7 @@ Links
   justify-items: center;
   align-items: center;
   justify-content: center;
-  height: 75vh;
+  height: 60vh;
   overflow: auto;
 }
 
@@ -88,8 +88,8 @@ Footer & Acknowledgements
 .ack-container {
   font-size: 1.5rem;
   font-weight: 300;
-  margin: 0 auto auto auto;
-  color: rgb(156, 156, 156);
+  margin: auto;
+  color: rgb(255, 255, 255);
 }
 
 .ack-container a,
@@ -100,7 +100,9 @@ Footer & Acknowledgements
 }
 
 .ack-container a:hover {
-  font-size: 2rem;
+  backdrop-filter: blur(3px);
+  box-shadow: 0px 5px 10px rgb(63, 63, 63);
+  background-color: rgba(189, 189, 189, 0.082);
 }
 
 .footer {
@@ -140,6 +142,10 @@ Media Queries
   .links-container {
     grid-template-columns: 100vw;
     margin-top: 2rem;
+  }
+  .widgets-container {
+    margin: 0;
+    width: 100vw;
   }
 
   p {
