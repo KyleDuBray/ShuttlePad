@@ -86,12 +86,16 @@ Footer & Acknowledgements
 *************************** */
 
 .ack-container {
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem;
   font-weight: 300;
-  margin: auto;
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.233);
+  margin: auto 0 auto auto;
+  color: rgb(0, 0, 0);
   border-radius: 2px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0px 5px 10px rgb(32, 32, 32);
+  background-color: rgba(189, 189, 189, 0.082);
 }
 
 .ack-container a,
@@ -99,20 +103,22 @@ Footer & Acknowledgements
 .ack-container a:hover,
 .ack-container a:active {
   color: inherit;
+  margin: 0 4px;
 }
 
 .ack-container a:hover {
-  backdrop-filter: blur(3px);
   box-shadow: 0px 5px 10px rgb(63, 63, 63);
-  background-color: rgba(189, 189, 189, 0.082);
 }
 
 .footer {
-  color: rgb(156, 156, 156);
+  color: rgb(255, 255, 255);
   font-size: 1.5rem;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.253);
+  background-color: rgba(0, 0, 0, 0.548);
   background-color: none;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
 /**************************
@@ -132,12 +138,12 @@ Media Queries
 }
 
 @media only screen and (max-width: 1128px) {
-  .link-item {
+  .links-container * {
     width: 141px;
   }
 }
 @media only screen and (max-width: 795px) {
-  .link-item {
+  .links-container * {
     width: 17.5vw;
   }
 }
@@ -147,6 +153,11 @@ Media Queries
     grid-template-columns: 100vw;
     margin-top: 2rem;
   }
+
+  .links-container * {
+    width: 100vw;
+  }
+
   .widgets-container {
     margin: 0;
     width: 100vw;
@@ -154,5 +165,9 @@ Media Queries
 
   p {
     overflow-wrap: normal;
+  }
+
+  .ack-container {
+    font-size: 1.5rem;
   }
 }
