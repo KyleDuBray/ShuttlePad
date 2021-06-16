@@ -12,9 +12,9 @@ import {
   CLEAR_ALL_ERRORS,
   FETCH_LOCATION,
   FETCH_WEATHER,
-} from "./types";
+} from './types';
 
-import axios from "axios";
+import axios from 'axios';
 
 export const createLink = (formValues) => {
   const { url, siteName } = formValues;
@@ -63,12 +63,18 @@ export const clearAllErrors = () => {
 
 export const fetchLocation = () => async (dispatch) => {
   let response;
-  await navigator.geolocation.getCurrentPosition((position) => {
-    const { latitude, longitude } = position.coords;
-    response = { latitude, longitude };
-    dispatch({ type: FETCH_LOCATION, payload: response });
-    dispatch(fetchWeather());
-  });
+  await navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const { latitude, longitude } = position.coords;
+      response = { latitude, longitude };
+      dispatch({ type: FETCH_LOCATION, payload: response });
+      dispatch(fetchWeather());
+    },
+    (err) => {
+      console.log(err);
+      dispatch({ type: FETCH_WEATHER, payload: {} });
+    }
+  );
 };
 
 export const fetchWeather = () => async (dispatch, getState) => {

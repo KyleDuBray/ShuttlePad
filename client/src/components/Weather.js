@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import "../styles/weather.css";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchLocation } from "../actions";
+import React, { useState, useEffect } from 'react';
+import '../styles/weather.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchLocation } from '../actions';
 
 const weatherStyles = {
-  sunny: "sunny-outline",
-  sunnyPartly: "partly-sunny-outline",
-  cloudy: "cloudy-outline",
-  rainy: "rainy-outline",
-  storm: "thunderstorm-outline",
-  night: "moon-outline",
-  nightCloudy: "cloudy-night-outline",
-  snow: "snow-outline",
+  sunny: 'sunny-outline',
+  sunnyPartly: 'partly-sunny-outline',
+  cloudy: 'cloudy-outline',
+  rainy: 'rainy-outline',
+  storm: 'thunderstorm-outline',
+  night: 'moon-outline',
+  nightCloudy: 'cloudy-night-outline',
+  snow: 'snow-outline',
 };
 
 const Weather = () => {
@@ -32,8 +32,6 @@ const Weather = () => {
     } else setLoading(true);
   }, [weather]);
 
-  useEffect(() => {}, [loading]);
-
   const renderWeatherUnits = () => {
     return !weather || Object.keys(weather).length === 0 ? null : <>&#176;F</>;
   };
@@ -47,31 +45,31 @@ const Weather = () => {
       return null;
     }
     if (isDayTime()) {
-      if (currentWeather.includes("storm")) {
+      if (currentWeather.includes('storm')) {
         return weatherStyles.storm;
       } else if (
-        currentWeather.includes("rain") ||
-        currentWeather.includes("drizzle")
+        currentWeather.includes('rain') ||
+        currentWeather.includes('drizzle')
       ) {
         return weatherStyles.rainy;
-      } else if (currentWeather.includes("snow")) {
+      } else if (currentWeather.includes('snow')) {
         return weatherStyles.snow;
-      } else if (currentWeather.includes("clear")) {
+      } else if (currentWeather.includes('clear')) {
         return weatherStyles.sunny;
-      } else if (currentWeather.includes("cloud")) {
-        if (currentWeather.includes("scattered")) {
+      } else if (currentWeather.includes('cloud')) {
+        if (currentWeather.includes('scattered')) {
           return weatherStyles.cloudy;
         } else return weatherStyles.sunnyPartly;
       } else return weatherStyles.cloudy;
     } else {
-      if (currentWeather.includes("storm")) {
+      if (currentWeather.includes('storm')) {
         return weatherStyles.storm;
       } else if (
-        currentWeather.includes("rain") ||
-        currentWeather.includes("drizzle")
+        currentWeather.includes('rain') ||
+        currentWeather.includes('drizzle')
       ) {
         return weatherStyles.rainy;
-      } else if (currentWeather.includes("clear")) {
+      } else if (currentWeather.includes('clear')) {
         return weatherStyles.night;
       } else return weatherStyles.nightCloudy;
     }
@@ -100,7 +98,7 @@ const Weather = () => {
       <div className="weather-reporter">
         <ion-icon name={!weather ? null : renderWeatherIcon()}></ion-icon>
         <h4>
-          {" "}
+          {' '}
           {!weather.main ? null : Math.round(parseInt(weather.main?.temp))}
           {renderWeatherUnits()}
         </h4>

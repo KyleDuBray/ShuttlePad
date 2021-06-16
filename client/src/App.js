@@ -21,7 +21,6 @@ const App = () => {
         const response = await axios.get('/api/unsplash');
         setFetchedImg(response.data.urls.regular);
         setFetchedData(response.data);
-        console.log(response.data);
       } catch (err) {
         console.error(err);
         setFetchedImg(background);
@@ -32,7 +31,6 @@ const App = () => {
 
   const getImageMetadata = useCallback(() => {
     let imageInfo;
-    console.log(Object.keys(fetchedData).length);
     if (Object.keys(fetchedData).length !== 0) {
       imageInfo = {
         photoUrl: fetchedData.links.html,
@@ -40,9 +38,6 @@ const App = () => {
         authorName: `${fetchedData.user.name}`,
       };
     } else imageInfo = { photoUrl: '', authorUrl: '' };
-
-    console.log(imageInfo);
-
     return imageInfo;
   }, [fetchedData]);
 
