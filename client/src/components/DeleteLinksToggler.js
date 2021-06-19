@@ -1,14 +1,20 @@
 import React from 'react';
 import Button from './Button';
-import { useToggleDeleteLink } from '../contexts/DeleteLinkContext';
+import {
+  useDeleteLink,
+  useToggleDeleteLink,
+} from '../contexts/DeleteLinkContext';
+import Hamburger from './Hamburger';
 
 const DeleteLinksToggler = () => {
   const toggleDelete = useToggleDeleteLink();
+  const deleteOpen = useDeleteLink();
 
+  // TODO: Apply Hamburger (above) to Button convention below.
   return (
     <Button
       handleClick={toggleDelete}
-      content={<ion-icon name="menu-outline"></ion-icon>}
+      content={<Hamburger open={deleteOpen} handleOpen={toggleDelete} />}
       outerClass="toggledelete"
       innerClass="toggledelete-span"
     />

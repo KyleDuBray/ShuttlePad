@@ -158,6 +158,16 @@ Media Queries
     width: 100vw;
   }
 
+  /* Included here for order purposes */
+  .toggledelete,
+  .toggledelete-span {
+    width: fit-content;
+  }
+
+  .nav-icon {
+    width: fit-content;
+  }
+
   .widgets-container {
     margin: 0;
     width: 100vw;

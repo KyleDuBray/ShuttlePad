@@ -107,7 +107,8 @@ Delete Link Button
 }
 
 /**************************
-Toggle DeleteLink Button
+Toggle DeleteLink Button - 
+Updated to custom animated button
 *************************** */
 
 .toggledelete,
@@ -116,7 +117,81 @@ Toggle DeleteLink Button
   border-radius: 0.25rem;
   background: none;
   cursor: pointer;
-  height: 20px;
+  position: absolute;
+  left: 2%;
+}
+
+.nav-icon {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-icon span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  border-radius: 50%;
+  width: 5px;
+  background: #000000;
+  opacity: 1;
+  left: 50%;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.nav-icon span:nth-child(1) {
+  top: 0px;
+}
+
+.nav-icon span:nth-child(2) {
+  top: 18px;
+}
+
+.nav-icon span:nth-child(3) {
+  top: 36px;
+}
+
+.nav-icon.open span {
+  width: 100%;
+  border-radius: 2px;
+  left: 0;
+}
+
+.nav-icon.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.nav-icon.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.nav-icon.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
 
 /**************************
@@ -142,6 +217,25 @@ Form Buttons
   transition: all 0.2s;
   height: 26.4px;
   width: 80px;
+}
+
+/**************************
+Media Queries
+*************************** */
+
+@media only screen and (max-width: 1128px) {
+  .toggledelete,
+  .toggledelete-span {
+    left: -2%;
+  }
+}
+
+@media only screen and (max-width: 645px) {
+  .toggledelete,
+  .toggledelete-span {
+    width: fit-content;
+    left: 5px;
+  }
 }
 
 @media only screen and (max-width: 620px) {

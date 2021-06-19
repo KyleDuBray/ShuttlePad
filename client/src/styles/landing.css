@@ -42,3 +42,9 @@ Media Queries
     font-size: 4.5rem;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .logo {
+    left: 5px;
+  }
+}
