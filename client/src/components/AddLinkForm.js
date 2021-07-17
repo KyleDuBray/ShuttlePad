@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   createLink,
   updateName,
@@ -11,17 +11,17 @@ import {
   clearUrlError,
   clearAllErrors,
   clearNameExistsError,
-} from '../actions';
+} from "../actions";
 
-import '../styles/form.css';
-import '../styles/error.css';
+import "../styles/form.css";
+import "../styles/error.css";
 
-import Button from './Button';
+import Button from "./Button";
 
 // ERROR TYPES (different than redux action types)
-const INVALID_SITENAME = 'INVALID_SITENAME';
-const SITENAME_ALREADY_EXISTS = 'SITENAME_ALREADY_EXISTS';
-const INVALID_URL = 'INVALID_URL';
+const INVALID_SITENAME = "INVALID_SITENAME";
+const SITENAME_ALREADY_EXISTS = "SITENAME_ALREADY_EXISTS";
+const INVALID_URL = "INVALID_URL";
 
 export default function AddLinkForm(props) {
   const dispatch = useDispatch();
@@ -55,8 +55,8 @@ export default function AddLinkForm(props) {
 
   const closeForm = () => {
     dispatch(clearAllErrors());
-    dispatch(updateName(''));
-    dispatch(updateUrl(''));
+    dispatch(updateName(""));
+    dispatch(updateUrl(""));
     props.handleCancel();
   };
 
@@ -95,13 +95,13 @@ export default function AddLinkForm(props) {
 
   const validateUrl = useCallback(
     (url) => {
-      if (!url || !url.startsWith('http')) {
-        dispatch(clearUrlError());
-        dispatch(createUrlError());
-        setShowUrlError(true);
-      } else {
+      if (url.startsWith("http://") || url.startsWith("https://")) {
+        console.log("running");
         dispatch(clearUrlError());
         setShowUrlError(false);
+      } else {
+        dispatch(createUrlError());
+        setShowUrlError(true);
       }
     },
     [dispatch]
@@ -157,7 +157,7 @@ export default function AddLinkForm(props) {
           <div className="field">
             <label>Name</label>
             <input
-              className={showSiteNameError ? 'error' : ''}
+              className={showSiteNameError ? "error" : ""}
               ref={siteNameInputRef}
               type="text"
               value={siteName}
@@ -168,7 +168,7 @@ export default function AddLinkForm(props) {
           <div className="field">
             <label>URL</label>
             <input
-              className={showUrlError ? 'error' : ''}
+              className={showUrlError ? "error" : ""}
               type="text"
               value={url}
               onChange={onUrlChange}
@@ -177,7 +177,7 @@ export default function AddLinkForm(props) {
           </div>
         </div>
         <Button
-          content={'Add'}
+          content={"Add"}
           handleClick={handleSubmit}
           innerClass="form-addlink-add-span"
           outerClass="form-addlink-add-btn"

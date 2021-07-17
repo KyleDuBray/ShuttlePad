@@ -47,7 +47,6 @@ const LinkItem = ({ url, siteName }) => {
       </div>
     ) : null;
   };
-
   return (
     <>
       {renderDeleteButton()}

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from "react";
 
 const Hamburger = (props) => {
   return (
     <div
-      className={`nav-icon ${props.open ? 'open' : null}`}
+      className={`nav-icon ${props.open ? "open" : null}`}
       onClick={() => {
         props.handleOpen();
       }}
